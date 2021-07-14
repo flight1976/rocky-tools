@@ -112,7 +112,7 @@ SUPPORTED_MAJOR="8"
 SUPPORTED_PLATFORM="platform:el$SUPPORTED_MAJOR"
 ARCH=$(arch)
 
-gpg_key_url="https://dl.rockylinux.org/pub/rocky/RPM-GPG-KEY-rockyofficial"
+gpg_key_url="http://mirror01.idc.hinet.net/rockylinux/RPM-GPG-KEY-rockyofficial"
 gpg_key_sha512="88fe66cf0a68648c2371120d56eb509835266d9efdf7c8b9ac8fc101bdf1f0e0197030d3ea65f4b5be89dc9d1ef08581adb068815c88d7b1dc40aa1c32990f6a"
 
 sm_ca_dir=/etc/rhsm/ca
@@ -121,8 +121,8 @@ unset tmp_sm_ca_dir
 # all repos must be signed with the same key given in $gpg_key_url
 declare -A repo_urls
 repo_urls=(
-    [rockybaseos]="https://dl.rockylinux.org/pub/rocky/${SUPPORTED_MAJOR}/BaseOS/$ARCH/os/"
-    [rockyappstream]="https://dl.rockylinux.org/pub/rocky/${SUPPORTED_MAJOR}/AppStream/$ARCH/os/"
+    [rockybaseos]="http://mirror01.idc.hinet.net/rockylinux/${SUPPORTED_MAJOR}/BaseOS/$ARCH/os/"
+    [rockyappstream]="http://mirror01.idc.hinet.net/rockylinux/${SUPPORTED_MAJOR}/AppStream/$ARCH/os/"
 )
 
 unset CDPATH
