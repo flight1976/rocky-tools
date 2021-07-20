@@ -644,6 +644,11 @@ EOF
     # rocky-repos and rocky-gpg-keys are now installed, so we don't need the key file anymore
     rm -rf "$gpg_tmp_dir"
 
+    # 2021/7/20 jihhong@cht.com.tw
+    # replace /etc/yum.repos.d/Rocky-* update server to mirror01.idc.hinet.net
+    find /etc/yum.repos.d -type f -name Rocky-\*.repo -exec sed -i 's/#baseurl=http:\/\/dl.rockylinux.org/baseurl=http:\/\/mirror01.idc.hinet.net/' {} \;
+    find /etc/yum.repos.d -type f -name Rocky-\*.repo -exec sed -i 's/^mirrorlist/#mirrorlist/' {} \;
+
     # We need to check to make sure that all of the original system packages
     # have been removed and all of the new ones have been added. If a package
     # was supposed to be removed and one with the same name added back then
